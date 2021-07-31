@@ -1,12 +1,15 @@
 package org.codechallenge.resources;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Initializer {
 
@@ -48,5 +51,16 @@ public class Initializer {
         driver.get(URL);
 
         return driver;
+    }
+
+    public String getScreenShotPath(String testCaseName,WebDriver driver) throws IOException
+    {
+        TakesScreenshot ts=(TakesScreenshot) driver;
+        File source =ts.getScreenshotAs(OutputType.FILE);
+        String destinationFile = System.getProperty("user.dir")+"\\reports\\"+testCaseName+".png";
+        FileUtils.copyFile(source,new File(destinationFile));
+        return destinationFile;
+
+
     }
 }
