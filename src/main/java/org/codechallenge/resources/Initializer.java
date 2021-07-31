@@ -1,4 +1,4 @@
-package org.codechallenge.com;
+package org.codechallenge.resources;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +14,7 @@ public class Initializer {
     public WebDriver initializerDriver() throws IOException {
 
         Properties prop = new Properties();
-        FileInputStream fileStream = new FileInputStream("\\applaudostudios_codechallenge\\src\\main\\java\\org\\codechallenge\\com\\data.properties");
+        FileInputStream fileStream = new FileInputStream("\\applaudostudios_codechallenge\\src\\main\\java\\org\\codechallenge\\resources\\data.properties");
 
         prop.load(fileStream);
         String browserName = prop.getProperty("BROWSER");
