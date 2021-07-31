@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="14176" started-at="2021-07-31T14:07:56 BOT" finished-at="2021-07-31T14:08:10 BOT">
+    <groups>
+    </groups>
+    <test name="C:/applaudostudios_codechallenge" duration-ms="14176" started-at="2021-07-31T14:07:56 BOT" finished-at="2021-07-31T14:08:10 BOT">
+      <class name="org.codechallenge.tests.TC001_AddItemShoppingCartSuccessfully">
+        <test-method status="PASS" signature="initializer()[pri:0, instance:org.codechallenge.tests.TC001_AddItemShoppingCartSuccessfully@3b0143d3]" name="initializer" is-config="true" duration-ms="5760" started-at="2021-07-31T14:07:56 BOT" finished-at="2021-07-31T14:08:01 BOT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializer -->
+        <test-method status="PASS" signature="homePageNavigation()[pri:0, instance:org.codechallenge.tests.TC001_AddItemShoppingCartSuccessfully@3b0143d3]" name="homePageNavigation" duration-ms="8217" started-at="2021-07-31T14:08:01 BOT" finished-at="2021-07-31T14:08:10 BOT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePageNavigation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:org.codechallenge.tests.TC001_AddItemShoppingCartSuccessfully@3b0143d3]" name="tearDown" is-config="true" duration-ms="148" started-at="2021-07-31T14:08:10 BOT" finished-at="2021-07-31T14:08:10 BOT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.codechallenge.tests.TC001_AddItemShoppingCartSuccessfully -->
+    </test> <!-- C:/applaudostudios_codechallenge -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/applaudostudios_codechallenge">
+        <classes>
+            <class name="org.codechallenge.com.AppTest">
+                <methods>
+                    <include name="shouldAnswerWithTrue"/>
+                </methods>
+            </class>
+            <class name="org.codechallenge.tests.TC001_AddItemShoppingCartSuccessfully">
+                <methods>
+                    <include name="homePageNavigation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
