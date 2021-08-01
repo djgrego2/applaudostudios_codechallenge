@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Initializer {
 
@@ -26,7 +28,14 @@ public class Initializer {
         if(browserName.equals("chrome")){
 
             System.setProperty("webdriver.chrome.driver", "\\applaudostudios_codechallenge\\src\\main\\java\\org\\codechallenge\\drivers\\chromedriver.exe");
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized"); // open Browser in maximized mode
+            options.addArguments("disable-infobars"); // disabling infobars
+            options.addArguments("--disable-extensions"); // disabling extensions
+            options.addArguments("--disable-gpu"); // applicable to windows os only
+            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+            options.addArguments("--no-sandbox"); // Bypass OS security model
+            driver = new ChromeDriver(options);
 
         }else if(browserName.equals("firefoex")){
 
@@ -45,7 +54,7 @@ public class Initializer {
 
         //PAGE LOAD TIMEOUT AND IMPLICIT WAIT TIME
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         //GO TO URL
         driver.get(URL);

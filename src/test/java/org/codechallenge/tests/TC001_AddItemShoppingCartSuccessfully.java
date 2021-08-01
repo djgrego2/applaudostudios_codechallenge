@@ -30,16 +30,15 @@ public class TC001_AddItemShoppingCartSuccessfully extends Initializer {
     public void homePageNavigation() throws IOException, InterruptedException {
 
         HomePage homePage = new HomePage(driver);
-        WomenPage womenPage = new WomenPage(driver);
         CartPage cartPage = new CartPage(driver);
 
 
 
         homePage.ValidateHomePage();
-        homePage.GoToWomenSection().click();
+        WomenPage womenPage = homePage.GoToWomenSection();
         womenPage.ValidateWomenPage();
         womenPage.ProductTotal();
-        int totalProduct = womenPage.AddWomenItemToCart(3);
+        int totalProduct = womenPage.AddWomenItemToCart(3, driver);
         log.info("Total product selected");
 
         cartPage.GoToShoppingCart();

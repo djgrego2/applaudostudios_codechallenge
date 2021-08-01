@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.Properties;
 public class WomenPage {
 
     public WebDriver driver;
+
     Helper helper = new Helper();
 
     By WomenCategoryName = By.xpath("//span[@class='category-name'][contains(.,'Women')]");
@@ -46,19 +49,18 @@ public class WomenPage {
         }
     }
 
-    public int AddWomenItemToCart(int Amount) throws InterruptedException {
+    public int AddWomenItemToCart(int Amount, WebDriver driver) throws InterruptedException {
 
         for(int i=1; i <= Amount; i++) {
 
             WebElement item = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[" + i + "]"));
             helper.MouseOver(driver, item);
-            Thread.sleep(500);
-            WebElement addCartButton = driver.findElement(By.xpath("(//span[contains(.,'Add to cart')])[" + i + "]"));
-            addCartButton.click();
-            Thread.sleep(500);
-            driver.findElement(ContinueShopping).click();
-        }
 
+            WebElement addCartButton = driver.findElement(By.xpath("(//span[contains(.,'Add to cart')])[" + i + "]"));
+            WebDriverWait wait = new WebDriverWait(driver, 30);
+            wait.until(ExpectedConditions.elementToBeClickable(addCartButton)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(ContinueShopping)).click();
+        }
         return Amount;
     }
 }

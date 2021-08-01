@@ -1,4 +1,1 @@
-17:39:40.091 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-17:39:48.345 [main] INFO  org.codechallenge.resources.Initializer - Total product selected
-17:39:49.753 [main] INFO  org.codechallenge.resources.Initializer - Total product in the cart
-17:39:49.753 [main] INFO  org.codechallenge.resources.Initializer - Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart
+22:31:57.870 [main] INFO  org.codechallenge.resources.Initializer - Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart
