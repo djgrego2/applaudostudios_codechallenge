@@ -33,8 +33,11 @@ public class HomePage {
         WomenPage womenPage = new WomenPage(driver);
         return womenPage;
     }
-    public WebElement GoToDressesSection(){
-        return driver.findElement(DressesSection);
+    public DressesPage GoToDressesSection(){
+        driver.findElement(DressesSection).click();
+        DressesPage dressesPage = new DressesPage(driver);
+
+        return dressesPage;
     }
     public WebElement GoToTshirtsSection(){
         return driver.findElement(TshirtsSection);

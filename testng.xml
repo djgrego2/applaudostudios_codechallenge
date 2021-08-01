@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="Regresion - Test Suite">
     <listeners>
         <listener class-name="org.codechallenge.tests.Listeners"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/applaudostudios_codechallenge">
+
+    <test verbose="2" preserve-order="true" name="TC001_AddWomenItemShoppingCartSuccessfully">
         <classes>
-            <class name="org.codechallenge.tests.TC001_AddItemShoppingCartSuccessfully">
+            <class name="org.codechallenge.tests.TC001_AddWomenItemShoppingCartSuccessfully">
                 <methods>
                     <include name="homePageNavigation"/>
                 </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TC002_AddDressesItemShoppingCartSuccessfully">
+        <classes>
+            <class name="org.codechallenge.tests.TC002_AddDressesItemShoppingCartSuccessfully">
             </class>
         </classes>
     </test>
