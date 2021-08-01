@@ -29,12 +29,14 @@ public class Initializer {
 
             System.setProperty("webdriver.chrome.driver", "\\applaudostudios_codechallenge\\src\\main\\java\\org\\codechallenge\\drivers\\chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("start-maximized"); // open Browser in maximized mode
-            options.addArguments("disable-infobars"); // disabling infobars
-            options.addArguments("--disable-extensions"); // disabling extensions
-            options.addArguments("--disable-gpu"); // applicable to windows os only
-            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            options.addArguments("--no-sandbox"); // Bypass OS security model
+
+            //options.addArguments("--headless"); // HEADLESS MODE
+            options.addArguments("start-maximized"); // MAXIMIZED BROWSER
+            options.addArguments("disable-infobars"); // DISABLE INFOBARS
+            options.addArguments("--disable-extensions"); // DISABLE EXTENSIONS
+            options.addArguments("--disable-gpu"); // FOR ANY ASSERT FAILS IN HEADLESS MODE
+            options.addArguments("--disable-dev-shm-usage"); // FLAG TO PREVENT BROWSER CRASH ISSUE / LIMITED RESOURCES PROBLEMS
+            options.addArguments("--no-sandbox"); // SECURITY MODEL
             driver = new ChromeDriver(options);
 
         }else if(browserName.equals("firefoex")){
