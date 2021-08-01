@@ -29,7 +29,7 @@ public class TC001_AddWomenItemShoppingCartSuccessfully extends Initializer {
     }
 
     @Test
-    public void homePageNavigation() throws IOException, InterruptedException {
+    public void AddWomenItemShoppingCartSuccessfully() throws IOException, InterruptedException {
 
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
@@ -41,8 +41,8 @@ public class TC001_AddWomenItemShoppingCartSuccessfully extends Initializer {
         WomenPage womenPage = homePage.GoToWomenSection();
         womenPage.ValidateWomenPage();
         womenPage.ProductTotal();
-        int totalProduct = helper.AddItemToCart(3, driver);
-        log.info("Total product selected");
+        int totalProduct = helper.AddItemToCart(3, driver); // SPECIFY THE NUMBER OF ITEMS TO ADD. DO NOT EXCEED THE TOTAL NUMBER
+        log.info("Total WOMEN product selected");
 
         cartPage.GoToShoppingCart();
         int totalCartProduct = cartPage.ValidateProductQuantity();

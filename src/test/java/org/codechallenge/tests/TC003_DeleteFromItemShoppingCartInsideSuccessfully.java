@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class TC003_DeleteFromItemShoppingCartSuccessfully extends Initializer {
+public class TC003_DeleteFromItemShoppingCartInsideSuccessfully extends Initializer {
 
     public static Logger log =LogManager.getLogger(Initializer.class.getName());
     public WebDriver driver;
@@ -28,13 +28,11 @@ public class TC003_DeleteFromItemShoppingCartSuccessfully extends Initializer {
     }
 
     @Test
-    public void DeleteFromItemShoppingCartSuccessfully() throws IOException, InterruptedException {
+    public void DeleteAllItemFromShoppingCartInside() throws IOException, InterruptedException {
 
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
         Helper helper = new Helper();
-
-
 
         homePage.ValidateHomePage();
         DressesPage dressesPage = homePage.GoToDressesSection();
@@ -53,12 +51,11 @@ public class TC003_DeleteFromItemShoppingCartSuccessfully extends Initializer {
         log.info("Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart");
 
         cartPage.DeleteAllItemFromCart(totalCartProduct);
-        log.info("All Item from Cart are Deleted");
-
+        log.info("All Item from Inside Cart are Deleted");
     }
 
     @AfterTest
     public void tearDown(){
-        //driver.close();
+        driver.close();
     }
 }

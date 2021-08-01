@@ -37,7 +37,7 @@ public class WomenPage {
     }
 
     public int ProductTotal(){
-        int TotalProduct = helper.GetTotalProduct(driver.findElement(ProductsCount).getText());
+        int TotalProduct = helper.GetTotalNumber(driver.findElement(ProductsCount).getText());
         return TotalProduct;
     }
 

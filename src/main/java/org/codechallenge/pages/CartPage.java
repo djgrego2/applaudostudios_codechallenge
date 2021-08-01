@@ -33,7 +33,7 @@ public class CartPage {
 
         String ProductTotal = driver.findElement(ProductQuantity).getText();
 
-        return helper.GetTotalProduct(ProductTotal);
+        return helper.GetTotalNumber(ProductTotal);
     }
 
     public void DeleteAllItemFromCart(int Amount){

@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.codechallenge.pages.CartPage;
 import org.codechallenge.pages.DressesPage;
 import org.codechallenge.pages.HomePage;
-import org.codechallenge.pages.WomenPage;
 import org.codechallenge.resources.Initializer;
 import org.codechallenge.utils.Helper;
 import org.junit.Assert;
@@ -16,7 +15,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class TC002_AddDressesItemShoppingCartSuccessfully extends Initializer {
+public class TC004_DeleteFromItemShoppingCartOutsideSuccessfully extends Initializer {
 
     public static Logger log =LogManager.getLogger(Initializer.class.getName());
     public WebDriver driver;
@@ -29,34 +28,27 @@ public class TC002_AddDressesItemShoppingCartSuccessfully extends Initializer {
     }
 
     @Test
-    public void AddDressesItemShoppingCartSuccessfully() throws IOException, InterruptedException {
+    public void DeleteAllItemFromShoppingCartOutside() throws IOException, InterruptedException {
 
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
         Helper helper = new Helper();
-
-
 
         homePage.ValidateHomePage();
         DressesPage dressesPage = homePage.GoToDressesSection();
         dressesPage.ValidateDressesPage();
         dressesPage.ProductTotal();
 
-        int totalProduct = helper.AddItemToCart(3, driver); // SPECIFY THE NUMBER OF ITEMS TO ADD. DO NOT EXCEED THE TOTAL NUMBER
+        int totalProduct = helper.AddItemToCart(3, driver);
         log.info("Total DRESSES product selected");
 
-        cartPage.GoToShoppingCart();
-        int totalCartProduct = cartPage.ValidateProductQuantity();
-        log.info("Total product in the cart");
-
-        // VALIDATE THE QUANTITY OF PRODUCTS ADDED WITH THE QUANTITY ADDED IN THE CART
-        Assert.assertEquals(totalProduct, totalCartProduct);
-        log.info("Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart");
+        helper.DeleteAllItemFromCart(totalProduct, driver);
+        log.info("All Item from Outside Cart are Deleted");
 
     }
 
     @AfterTest
     public void tearDown(){
-        driver.close();
+        //driver.close();
     }
 }

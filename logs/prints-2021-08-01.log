@@ -1,5 +1,5 @@
-00:56:33.179 [main] INFO  org.codechallenge.resources.Initializer - Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart
-00:57:17.717 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-00:57:24.894 [main] INFO  org.codechallenge.resources.Initializer - Total DRESSES product selected
-00:57:25.863 [main] INFO  org.codechallenge.resources.Initializer - Total product in the cart
-00:57:25.863 [main] INFO  org.codechallenge.resources.Initializer - Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart
+12:19:54.405 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+12:19:55.699 [main] INFO  org.codechallenge.resources.Initializer - Search Item Successfully
+12:21:56.333 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+12:21:58.154 [main] INFO  org.codechallenge.resources.Initializer - Search Item Successfully
+12:22:29.996 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
