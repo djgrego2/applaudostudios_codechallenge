@@ -25,7 +25,7 @@ public class TC005_SearchCorrectItemEnterPressSuccessfully extends Initializer {
     }
 
     @Test (priority = 1)
-    public void SearchItemEnterPressSuccessfully(){
+    public void SearchCorrectItemEnterPressSuccessfully(){
 
         HomePage homePage = new HomePage(driver);
         Helper helper = new Helper();
@@ -37,6 +37,7 @@ public class TC005_SearchCorrectItemEnterPressSuccessfully extends Initializer {
 
     @AfterTest
     public void tearDown(){
-        //driver.close();
+        driver.close();
+        log.info("Close Chrome Driver");
     }
 }

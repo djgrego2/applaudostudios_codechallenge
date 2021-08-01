@@ -1,1 +1,2 @@
-12:22:32.450 [main] INFO  org.codechallenge.resources.Initializer - Search Item Successfully
+13:15:49.575 [main] INFO  org.codechallenge.resources.Initializer - Store Information Validated
+13:15:49.659 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver

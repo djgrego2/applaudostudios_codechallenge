@@ -1,9 +1,6 @@
 package org.codechallenge.utils;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +14,9 @@ public class Helper {
 
     By ContinueShopping = By.xpath("(//span[contains(.,'Continue shopping')])[2]");
     By ShoppingCartOption = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
+
+    //Search Locators
+
     By SearchBar = By.xpath("//input[contains(@id,'search_query_top')]");
     By SubmitButton = By.name("submit_search");
     By SearchNamePage = By.xpath("//span[@class='navigation_page'][contains(.,'Search')]");
@@ -24,7 +24,12 @@ public class Helper {
     By TextNameSearched = By.xpath("//*[@id=\"center_column\"]/h1/span[1]");
     By AlertWarning = By.xpath("//*[@id=\"center_column\"]/p");
 
-    //*[@id="center_column"]/h1/span[2]
+    //Store Locators
+
+    By StoreTitle = By.xpath("//*[@id=\"block_contact_infos\"]/div/h4");
+    By StoreTelNumber = By.xpath("//*[@id=\"block_contact_infos\"]/div/ul/li[2]/span");
+    By StoreEmail = By.xpath("//*[@id=\"block_contact_infos\"]/div/ul/li[3]/span/a");
+    By StoreAddress = By.xpath("//*[@id=\"block_contact_infos\"]/div/ul/li[1]");
 
     public int GetTotalNumber(String TotalCount){
 
@@ -108,5 +113,14 @@ public class Helper {
             Assert.assertTrue(driver.findElement(TextNameSearched).isDisplayed());
             System.out.println("ITEMS HAVE BEEN FOUND: " + driver.findElement(TextNameSearched).getText());
         }
+    }
+
+    public void ScrollToElement(WebDriver driver){
+            JavascriptExecutor je = (JavascriptExecutor)driver;
+            je.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(StoreTitle));
+            Assert.assertEquals("Store information", driver.findElement(StoreTitle).getText());
+            Assert.assertTrue(driver.findElement(StoreAddress).isDisplayed());
+            Assert.assertEquals("support@seleniumframework.com", driver.findElement(StoreEmail).getText());
+            Assert.assertEquals("(347) 466-7432", driver.findElement(StoreTelNumber).getText());
     }
 }

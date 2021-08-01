@@ -28,7 +28,7 @@ public class TC003_DeleteFromItemShoppingCartInsideSuccessfully extends Initiali
     }
 
     @Test
-    public void DeleteAllItemFromShoppingCartInside() throws IOException, InterruptedException {
+    public void DeleteFromItemShoppingCartInsideSuccessfully() throws IOException, InterruptedException {
 
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
@@ -57,5 +57,6 @@ public class TC003_DeleteFromItemShoppingCartInsideSuccessfully extends Initiali
     @AfterTest
     public void tearDown(){
         driver.close();
+        log.info("Close Chrome Driver");
     }
 }

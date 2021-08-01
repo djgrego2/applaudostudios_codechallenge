@@ -35,8 +35,6 @@ public class TC001_AddWomenItemShoppingCartSuccessfully extends Initializer {
         CartPage cartPage = new CartPage(driver);
         Helper helper = new Helper();
 
-
-
         homePage.ValidateHomePage();
         WomenPage womenPage = homePage.GoToWomenSection();
         womenPage.ValidateWomenPage();
@@ -57,5 +55,6 @@ public class TC001_AddWomenItemShoppingCartSuccessfully extends Initializer {
     @AfterTest
     public void tearDown(){
         driver.close();
+        log.info("Close Chrome Driver");
     }
 }

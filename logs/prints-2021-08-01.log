@@ -1,5 +1,6 @@
-12:19:54.405 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-12:19:55.699 [main] INFO  org.codechallenge.resources.Initializer - Search Item Successfully
-12:21:56.333 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-12:21:58.154 [main] INFO  org.codechallenge.resources.Initializer - Search Item Successfully
-12:22:29.996 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+13:15:39.183 [main] INFO  org.codechallenge.resources.Initializer - Search Item Successfully
+13:15:39.284 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
+13:15:44.298 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+13:15:45.466 [main] INFO  org.codechallenge.resources.Initializer - Search Incorrect Item Successfully
+13:15:45.543 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
+13:15:49.333 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage

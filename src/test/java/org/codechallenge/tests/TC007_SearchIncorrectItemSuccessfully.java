@@ -32,11 +32,12 @@ public class TC007_SearchIncorrectItemSuccessfully extends Initializer {
 
         homePage.ValidateHomePage();
         helper.SearchProductEnterKey("efgeq", driver);
-        log.info("Search Item Successfully");
+        log.info("Search Incorrect Item Successfully");
     }
 
     @AfterTest
     public void tearDown(){
-        //driver.close();
+        driver.close();
+        log.info("Close Chrome Driver");
     }
 }
