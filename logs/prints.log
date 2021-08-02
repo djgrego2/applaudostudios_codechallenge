@@ -1,3 +1,5 @@
-18:21:09.839 [main] INFO  org.codechallenge.resources.Initializer - Total product in the cart
-18:21:09.846 [main] INFO  org.codechallenge.resources.Initializer - Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart
-18:21:10.023 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
+20:39:59.536 [main] INFO  org.codechallenge.resources.Initializer - Search Incorrect Item Successfully
+20:39:59.646 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
+20:40:03.019 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+20:40:03.242 [main] INFO  org.codechallenge.resources.Initializer - Store Information Validated
+20:40:03.310 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver

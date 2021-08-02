@@ -43,25 +43,28 @@ public class Initializer {
 
         }else if(browserName.equals("FIREFOX")){
 
-            // Execute FireFox
+            // EXECUTE FIREFOX
 
         }else if(browserName.equals("IE")){
 
-            // Execute Internet Explorer
+            // EXECUTE IE
+        }else if(browserName.equals("OPERA")){
+
+            // EXECUTE OPERA
+        }
+        else if(browserName.equals("EDGE")){
+
+            // EXECUTE EDGE
         }
 
-        // MAXIMIZE BROWSER
-        driver.manage().window().maximize();
 
-        //DELETE ALL THE COOKIES
-        driver.manage().deleteAllCookies();
+        //driver.manage().window().maximize(); // MAXIMIZE BROWSER
 
-        //PAGE LOAD TIMEOUT AND IMPLICIT WAIT TIME
-        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+
+        driver.manage().deleteAllCookies(); //DELETE ALL THE COOKIES
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS); //PAGE LOAD TIMEOUT AND IMPLICIT WAIT TIME
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-        //GO TO URL
-        driver.get(URL);
+        driver.get(URL); //GO TO URL
 
         return driver;
     }
