@@ -33,7 +33,7 @@ public class WomenPage {
     public void ValidateWomenPage(){
         String CategoryName = driver.findElement(WomenCategoryName).getText();
         Assert.assertEquals(CategoryName,"Women");
-        System.out.println("Women Page Validate");
+        System.out.println("WOMENPAGE VALIDATE");
     }
 
     public int ProductTotal(){

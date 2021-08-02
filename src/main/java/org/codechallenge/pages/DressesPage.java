@@ -21,10 +21,10 @@ public class DressesPage {
         this.driver = driver;
     }
 
-    public void ValidateDressesPage(){
+    public void ValidateDressesPage(WebDriver driver){
         String CategoryName = driver.findElement(DressesCategoryName).getText();
         Assert.assertEquals(CategoryName,"Dresses");
-        System.out.println("Women Page Validate");
+        System.out.println("DRESSESPAGE VALIDATE");
     }
 
     public int ProductTotal(){

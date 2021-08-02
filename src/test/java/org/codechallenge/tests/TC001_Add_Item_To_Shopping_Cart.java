@@ -1,6 +1,7 @@
 package org.codechallenge.tests;
 
 import org.codechallenge.pages.CartPage;
+import org.codechallenge.pages.DressesPage;
 import org.codechallenge.pages.HomePage;
 import org.codechallenge.pages.WomenPage;
 import org.codechallenge.resources.Initializer;
@@ -16,11 +17,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
-public class TC001_AddWomenItemShoppingCartSuccessfully extends Initializer {
+public class TC001_Add_Item_To_Shopping_Cart extends Initializer {
 
-    public static Logger log =LogManager.getLogger(Initializer.class.getName());
+    public static Logger log = LogManager.getLogger(Initializer.class.getName());
     public WebDriver driver;
-
 
     @BeforeTest
     public void initializer() throws IOException {
@@ -28,14 +28,14 @@ public class TC001_AddWomenItemShoppingCartSuccessfully extends Initializer {
         log.info("Driver Initialized and Navigated HomePage");
     }
 
-    @Test
-    public void AddWomenItemShoppingCartSuccessfully() throws IOException, InterruptedException {
+    @Test (priority = 1)
+    public void TC_Add_Women_Item_To_Shopping_CartSuccessfully() {
 
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
         Helper helper = new Helper();
 
-        homePage.ValidateHomePage();
+        homePage.GoHomePage();
         WomenPage womenPage = homePage.GoToWomenSection();
         womenPage.ValidateWomenPage();
         womenPage.ProductTotal();
@@ -52,9 +52,24 @@ public class TC001_AddWomenItemShoppingCartSuccessfully extends Initializer {
 
     }
 
+    @Test (priority = 2)
+    public void TC_Add_Dresses_Item_To_Shopping_Cart_Successfully() {
+
+        HomePage homePage = new HomePage(driver);
+        Helper helper = new Helper();
+
+        homePage.GoHomePage();
+        DressesPage dressesPage = homePage.GoToDressesSection();
+        dressesPage.ValidateDressesPage(driver);
+        dressesPage.ProductTotal();
+
+        helper.AddItemToCart(3, driver); // SPECIFY THE NUMBER OF ITEMS TO ADD. DO NOT EXCEED THE TOTAL NUMBER
+        log.info("ADD DRESSES ITEM TO CART");
+    }
+
     @AfterTest
     public void tearDown(){
-        driver.close();
-        log.info("Close Chrome Driver");
+        driver.quit();
+        log.info("Quit Chrome Driver");
     }
 }

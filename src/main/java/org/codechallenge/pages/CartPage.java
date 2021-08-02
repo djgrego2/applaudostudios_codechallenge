@@ -15,6 +15,8 @@ public class CartPage {
 
     By ProductQuantity = By.xpath("//*[@id=\"summary_products_quantity\"]");
     By CartTitle = By.xpath("//span[@class='navigation_page'][contains(.,'Your shopping cart')]");
+    By CartEmptyAlert = By.xpath("//*[@id=\"center_column\"]/p");
+
     By DeleteIcon = By.xpath("(//i[contains(@class,'icon-trash')])[1]");
 
     public CartPage(WebDriver driver) {
@@ -24,9 +26,9 @@ public class CartPage {
     public void GoToShoppingCart(){
         driver.get("http://automationpractice.com/index.php?controller=order");
         String Title = driver.findElement(CartTitle).getText();
-        System.out.println(Title);
         Assert.assertEquals(Title, "Your shopping cart");
         Assert.assertTrue(driver.findElement(CartTitle).isDisplayed());
+        System.out.println("CARTPAGE VALIDATE");
     }
 
     public int ValidateProductQuantity(){
@@ -45,5 +47,9 @@ public class CartPage {
             wait.until(ExpectedConditions.elementToBeClickable(DeleteIcon)).click();
         }
 
+    }
+
+    public boolean ValidateEmptyCart(){
+        return driver.findElement(CartEmptyAlert).isDisplayed();
     }
 }

@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Initializer {
 
@@ -56,13 +55,9 @@ public class Initializer {
             // EXECUTE EDGE
         }
 
-
-        //driver.manage().window().maximize(); // MAXIMIZE BROWSER
-
-
         driver.manage().deleteAllCookies(); //DELETE ALL THE COOKIES
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS); //PAGE LOAD TIMEOUT AND IMPLICIT WAIT TIME
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(URL); //GO TO URL
 
         return driver;

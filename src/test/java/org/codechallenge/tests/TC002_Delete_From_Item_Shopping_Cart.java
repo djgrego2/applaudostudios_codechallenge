@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class TC004_DeleteFromItemShoppingCartOutsideSuccessfully extends Initializer {
+public class TC002_Delete_From_Item_Shopping_Cart extends Initializer {
 
     public static Logger log =LogManager.getLogger(Initializer.class.getName());
     public WebDriver driver;
@@ -28,28 +28,52 @@ public class TC004_DeleteFromItemShoppingCartOutsideSuccessfully extends Initial
     }
 
     @Test
-    public void DeleteFromItemShoppingCartOutsideSuccessfully() throws IOException, InterruptedException {
+    public void TC_Delete_From_Item_Shopping_Cart_Inside_Successfully() {
 
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
         Helper helper = new Helper();
 
-        homePage.ValidateHomePage();
+        homePage.GoHomePage();
         DressesPage dressesPage = homePage.GoToDressesSection();
-        dressesPage.ValidateDressesPage();
+        dressesPage.ValidateDressesPage(driver);
+        dressesPage.ProductTotal();
+
+        helper.AddItemToCart(3, driver);
+        log.info("Total DRESSES product selected");
+
+        cartPage.GoToShoppingCart();
+        int totalCartProduct = cartPage.ValidateProductQuantity();
+        log.info("GO TO CART PAGE AND VALIDATE PRODUCT QUANTITY IN CART");
+
+        cartPage.DeleteAllItemFromCart(totalCartProduct);
+        Assert.assertTrue(cartPage.ValidateEmptyCart());
+        log.info("DELL ALL ITEM CART AND VALIDATE ITEM DELETED");
+    }
+
+    @Test
+    public void TC_Delete_From_Item_Shopping_Cart_Outside_Successfully() {
+
+        HomePage homePage = new HomePage(driver);
+        CartPage cartPage = new CartPage(driver);
+        Helper helper = new Helper();
+
+        homePage.GoHomePage();
+        DressesPage dressesPage = homePage.GoToDressesSection();
+        dressesPage.ValidateDressesPage(driver);
         dressesPage.ProductTotal();
 
         int totalProduct = helper.AddItemToCart(3, driver);
         log.info("Total DRESSES product selected");
 
         helper.DeleteAllItemFromCart(totalProduct, driver);
-        log.info("All Item from Outside Cart are Deleted");
-
+        Assert.assertTrue(cartPage.ValidateEmptyCart());
+        log.info("ALL ITEM FROM OUTSIDE CART ARE DELETED");
     }
 
     @AfterTest
     public void tearDown(){
-        //driver.close();
+        driver.quit();
         log.info("Close Chrome Driver");
     }
 }

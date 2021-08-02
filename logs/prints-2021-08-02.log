@@ -1,0 +1,6 @@
+14:24:01.995 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
+14:25:11.730 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+14:25:27.764 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
+14:29:25.815 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+14:29:56.213 [main] INFO  org.codechallenge.resources.Initializer - Total WOMEN product selected
+14:30:57.672 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver

@@ -1,10 +1,8 @@
 package org.codechallenge.pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
@@ -15,7 +13,6 @@ public class HomePage {
     By TshirtsSection = By.xpath("((//a[@title='Dresses'])[2]");
     By YourLogoImg = By.xpath("//img[@src='http://automationpractice.com/img/logo.jpg']");
 
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -23,11 +20,14 @@ public class HomePage {
         return driver.findElement(YourLogoImg);
     }
 
-    public void ValidateHomePage() {
-        //driver.findElement(YourLogoImg).click();
-        String URL = driver.getCurrentUrl();
+    public void GoHomePage() {
 
-        System.out.println("HOMEPAGE VALIDATED");
+        String URL = driver.getCurrentUrl();
+        if (URL.equals("http://automationpractice.com/index.php")){
+            System.out.println("HOMEPAGE VALIDATED");
+        }else{
+            driver.findElement(YourLogoImg).click();
+        }
     }
     public WomenPage GoToWomenSection(){
         driver.findElement(WomenSection).click();
@@ -41,6 +41,9 @@ public class HomePage {
         return dressesPage;
     }
     public WebElement GoToTshirtsSection(){
+
+        // IMPLEMENTATION OF TSHIRST PAGE
+
         return driver.findElement(TshirtsSection);
     }
 }

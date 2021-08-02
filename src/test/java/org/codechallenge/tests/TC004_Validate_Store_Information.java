@@ -12,11 +12,10 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class TC006_SearchCorrectItemSubmitButtonSuccessfully extends Initializer {
+public class TC004_Validate_Store_Information extends Initializer {
 
-    public static Logger log =LogManager.getLogger(Initializer.class.getName());
+    public static Logger log = LogManager.getLogger(Initializer.class.getName());
     public WebDriver driver;
-
 
     @BeforeTest
     public void initializer() throws IOException {
@@ -24,20 +23,20 @@ public class TC006_SearchCorrectItemSubmitButtonSuccessfully extends Initializer
         log.info("Driver Initialized and Navigated HomePage");
     }
 
-    @Test (priority = 1)
-    public void SearchCorrectItemSubmitButtonSuccessfully(){
+    @Test
+    public void ValidateStoreInformationSuccessfully(){
 
         HomePage homePage = new HomePage(driver);
         Helper helper = new Helper();
 
-        homePage.ValidateHomePage();
-        helper.SearchProductSubmitButton("FADED", driver);
-        log.info("Search Item Successfully");
+        homePage.GoHomePage();
+        helper.ScrollToElement(driver);
+        log.info("Store Information Validated");
     }
 
     @AfterTest
     public void tearDown(){
-        driver.close();
-        log.info("Close Chrome Driver");
+        driver.quit();
+        log.info("Quit Chrome Driver");
     }
 }

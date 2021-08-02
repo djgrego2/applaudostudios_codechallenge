@@ -5,52 +5,29 @@
         <listener class-name="org.codechallenge.tests.Listeners"/>
     </listeners>
 
-    <test name="TC001_AddWomenItemShoppingCartSuccessfully">
+    <test name="TC001_Add_Item_To_Shopping_Cart">
         <classes>
-            <class name="org.codechallenge.tests.TC001_AddWomenItemShoppingCartSuccessfully">
+            <class name="org.codechallenge.tests.TC001_Add_Item_To_Shopping_Cart">
             </class>
         </classes>
     </test>
-    <test name="TC002_AddDressesItemShoppingCartSuccessfully">
+    <test name="TC002_Delete_From_Item_Shopping_Cart">
         <classes>
-            <class name="org.codechallenge.tests.TC002_AddDressesItemShoppingCartSuccessfully">
+            <class name="org.codechallenge.tests.TC002_Delete_From_Item_Shopping_Cart">
             </class>
         </classes>
     </test>
-    <test name="TC003_DeleteFromItemShoppingCartInsideSuccessfully">
+    <test name="TC003_Search_Store_Item">
         <classes>
-            <class name="org.codechallenge.tests.TC003_DeleteFromItemShoppingCartInsideSuccessfully">
+            <class name="org.codechallenge.tests.TC003_Search_Store_Item">
             </class>
         </classes>
     </test>
-    <test name="TC004_DeleteFromItemShoppingCartOutsideSuccessfully">
+    <test name="TC004_Validate_Store_Information">
         <classes>
-            <class name="org.codechallenge.tests.TC004_DeleteFromItemShoppingCartOutsideSuccessfully">
+            <class name="org.codechallenge.tests.TC004_Validate_Store_Information">
             </class>
         </classes>
     </test>
-    <test name="TC005_SearchCorrectItemEnterPressSuccessfully">
-        <classes>
-            <class name="org.codechallenge.tests.TC005_SearchCorrectItemEnterPressSuccessfully">
-            </class>
-        </classes>
-    </test>
-    <test name="TC006_SearchCorrectItemSubmitButtonSuccessfully">
-        <classes>
-            <class name="org.codechallenge.tests.TC006_SearchCorrectItemSubmitButtonSuccessfully">
-            </class>
-        </classes>
-    </test>
-    <test name="TC007_SearchIncorrectItemSuccessfully">
-        <classes>
-            <class name="org.codechallenge.tests.TC007_SearchIncorrectItemSuccessfully">
-            </class>
-        </classes>
-    </test>
-    <test name="TC008_ValidateStoreInformationSuccessfully">
-        <classes>
-            <class name="org.codechallenge.tests.TC008_ValidateStoreInformationSuccessfully">
-            </class>
-        </classes>
-    </test>
+
 </suite>

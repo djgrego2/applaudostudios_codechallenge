@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class TC007_SearchIncorrectItemSuccessfully extends Initializer {
+public class TC003_Search_Store_Item extends Initializer {
 
     public static Logger log =LogManager.getLogger(Initializer.class.getName());
     public WebDriver driver;
@@ -25,19 +25,41 @@ public class TC007_SearchIncorrectItemSuccessfully extends Initializer {
     }
 
     @Test (priority = 1)
-    public void SearchIncorrectItemSuccessfully(){
+    public void TC_Search_Correct_Item_Enter_PressSuccessfully(){
 
         HomePage homePage = new HomePage(driver);
         Helper helper = new Helper();
 
-        homePage.ValidateHomePage();
+        homePage.GoHomePage();
+        helper.SearchProductEnterKey("PRINTED", driver);
+        log.info("Search Item Successfully");
+    }
+
+    @Test (priority = 2)
+    public void TC_Search_Correct_Item_Submit_Button_Successfully(){
+
+        HomePage homePage = new HomePage(driver);
+        Helper helper = new Helper();
+
+        homePage.GoHomePage();
+        helper.SearchProductSubmitButton("FADED", driver);
+        log.info("Search Item Successfully");
+    }
+
+    @Test (priority = 3)
+    public void TC_Search_Incorrect_Item_Successfully(){
+
+        HomePage homePage = new HomePage(driver);
+        Helper helper = new Helper();
+
+        homePage.GoHomePage();
         helper.SearchProductEnterKey("efgeq", driver);
         log.info("Search Incorrect Item Successfully");
     }
 
     @AfterTest
     public void tearDown(){
-        driver.close();
-        log.info("Close Chrome Driver");
+        driver.quit();
+        log.info("Quit Chrome Driver");
     }
 }

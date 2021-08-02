@@ -43,7 +43,7 @@ public class Helper {
         action.moveToElement(item).perform();
     }
 
-    public int AddItemToCart(int Amount, WebDriver driver) throws InterruptedException {
+    public int AddItemToCart(int Amount, WebDriver driver) {
 
         for(int i=1; i <= Amount; i++) {
 
