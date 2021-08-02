@@ -1,6 +1,5 @@
-13:15:39.183 [main] INFO  org.codechallenge.resources.Initializer - Search Item Successfully
-13:15:39.284 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
-13:15:44.298 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-13:15:45.466 [main] INFO  org.codechallenge.resources.Initializer - Search Incorrect Item Successfully
-13:15:45.543 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
-13:15:49.333 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+18:20:14.081 [main] INFO  org.codechallenge.resources.Initializer - Total product in the cart
+18:20:14.089 [main] INFO  org.codechallenge.resources.Initializer - Successfully Validate the Quantity of Products Added with the Quantity Added in the Cart
+18:20:14.239 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
+18:21:02.928 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+18:21:08.846 [main] INFO  org.codechallenge.resources.Initializer - Total WOMEN product selected

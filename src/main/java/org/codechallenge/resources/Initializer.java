@@ -18,8 +18,10 @@ public class Initializer {
     public WebDriver driver;
     public WebDriver initializerDriver() throws IOException {
 
+        String userDirectory = System.getProperty("user.dir");
+        System.out.println(userDirectory);
         Properties prop = new Properties();
-        FileInputStream fileStream = new FileInputStream("\\applaudostudios_codechallenge\\src\\main\\java\\org\\codechallenge\\resources\\data.properties");
+        FileInputStream fileStream = new FileInputStream(userDirectory + "\\src\\main\\java\\org\\codechallenge\\resources\\data.properties");
 
         prop.load(fileStream);
         String browserName = prop.getProperty("BROWSER");
@@ -27,7 +29,7 @@ public class Initializer {
 
         if(browserName.equals("chrome")){
 
-            System.setProperty("webdriver.chrome.driver", "\\applaudostudios_codechallenge\\src\\main\\java\\org\\codechallenge\\drivers\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", userDirectory + "\\src\\main\\java\\org\\codechallenge\\drivers\\chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
 
             //options.addArguments("--headless"); // HEADLESS MODE
@@ -39,7 +41,7 @@ public class Initializer {
             options.addArguments("--no-sandbox"); // SECURITY MODEL
             driver = new ChromeDriver(options);
 
-        }else if(browserName.equals("firefoex")){
+        }else if(browserName.equals("FIREFOX")){
 
             // Execute FireFox
 
