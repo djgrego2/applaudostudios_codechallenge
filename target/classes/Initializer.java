@@ -19,7 +19,6 @@ public class Initializer {
     public WebDriver initializerDriver() throws IOException {
 
         String userDirectory = System.getProperty("user.dir");
-        System.out.println(userDirectory);
         Properties prop = new Properties();
         FileInputStream fileStream = new FileInputStream(userDirectory + "\\src\\main\\java\\org\\codechallenge\\resources\\data.properties");
 
@@ -62,13 +61,9 @@ public class Initializer {
 
 
         driver.manage().deleteAllCookies(); //DELETE ALL THE COOKIES
-
-
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS); //PAGE LOAD TIMEOUT AND IMPLICIT WAIT TIME
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-        //GO TO URL
-        driver.get(URL);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get(URL); //GO TO URL
 
         return driver;
     }

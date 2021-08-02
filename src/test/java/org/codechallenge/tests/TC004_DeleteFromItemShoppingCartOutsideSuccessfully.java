@@ -49,7 +49,7 @@ public class TC004_DeleteFromItemShoppingCartOutsideSuccessfully extends Initial
 
     @AfterTest
     public void tearDown(){
-        driver.close();
+        //driver.close();
         log.info("Close Chrome Driver");
     }
 }

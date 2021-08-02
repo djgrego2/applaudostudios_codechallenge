@@ -5,12 +5,9 @@
         <listener class-name="org.codechallenge.tests.Listeners"/>
     </listeners>
 
-    <test verbose="2" preserve-order="true" name="TC001_AddWomenItemShoppingCartSuccessfully">
+    <test name="TC001_AddWomenItemShoppingCartSuccessfully">
         <classes>
             <class name="org.codechallenge.tests.TC001_AddWomenItemShoppingCartSuccessfully">
-                <methods>
-                    <include name="homePageNavigation"/>
-                </methods>
             </class>
         </classes>
     </test>

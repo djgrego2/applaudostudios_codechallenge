@@ -1,5 +1,2 @@
-20:39:59.536 [main] INFO  org.codechallenge.resources.Initializer - Search Incorrect Item Successfully
-20:39:59.646 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
-20:40:03.019 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-20:40:03.242 [main] INFO  org.codechallenge.resources.Initializer - Store Information Validated
-20:40:03.310 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
+21:11:54.062 [main] INFO  org.codechallenge.resources.Initializer - All Item from Outside Cart are Deleted
+21:11:54.071 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver

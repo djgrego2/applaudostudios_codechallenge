@@ -19,7 +19,6 @@ public class Initializer {
     public WebDriver initializerDriver() throws IOException {
 
         String userDirectory = System.getProperty("user.dir");
-        System.out.println(userDirectory);
         Properties prop = new Properties();
         FileInputStream fileStream = new FileInputStream(userDirectory + "\\src\\main\\java\\org\\codechallenge\\resources\\data.properties");
 
