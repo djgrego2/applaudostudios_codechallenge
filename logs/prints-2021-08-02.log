@@ -1,6 +1,5 @@
-14:24:01.995 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
-14:25:11.730 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-14:25:27.764 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
-14:29:25.815 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
-14:29:56.213 [main] INFO  org.codechallenge.resources.Initializer - Total WOMEN product selected
-14:30:57.672 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
+15:18:51.576 [main] INFO  org.codechallenge.resources.Initializer - GO TO CART PAGE AND VALIDATE PRODUCT QUANTITY IN CART
+15:18:54.706 [main] INFO  org.codechallenge.resources.Initializer - DELL ALL ITEM CART AND VALIDATE ITEM DELETED
+15:19:00.036 [main] INFO  org.codechallenge.resources.Initializer - Total DRESSES product selected
+15:19:31.682 [main] INFO  org.codechallenge.resources.Initializer - Close Chrome Driver
+15:20:09.214 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage

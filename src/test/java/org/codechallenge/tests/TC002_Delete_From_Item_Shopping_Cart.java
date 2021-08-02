@@ -63,10 +63,11 @@ public class TC002_Delete_From_Item_Shopping_Cart extends Initializer {
         dressesPage.ValidateDressesPage(driver);
         dressesPage.ProductTotal();
 
-        int totalProduct = helper.AddItemToCart(3, driver);
+        helper.AddItemToCart(3, driver);
         log.info("Total DRESSES product selected");
 
-        helper.DeleteAllItemFromCart(totalProduct, driver);
+        helper.DeleteAllItemFromCart(3, driver);
+        cartPage.GoToShoppingCart();
         Assert.assertTrue(cartPage.ValidateEmptyCart());
         log.info("ALL ITEM FROM OUTSIDE CART ARE DELETED");
     }

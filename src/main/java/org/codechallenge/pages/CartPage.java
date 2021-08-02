@@ -50,6 +50,9 @@ public class CartPage {
     }
 
     public boolean ValidateEmptyCart(){
-        return driver.findElement(CartEmptyAlert).isDisplayed();
+
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+
+        return wait.until(ExpectedConditions.elementToBeClickable(CartEmptyAlert)).isDisplayed();
     }
 }
