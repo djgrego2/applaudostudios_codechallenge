@@ -1,4 +1,4 @@
-# Selenium Java Framework for Applaudo Studios Code Challenge
+# Selenium Java Framework for Code Challenge
 # Tools
 1. Intellij IDEA
 2. Java JDK
