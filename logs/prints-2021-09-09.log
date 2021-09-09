@@ -1,0 +1,6 @@
+09:32:05.766 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
+09:36:55.664 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+09:37:11.474 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
+09:40:14.789 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage
+09:40:32.019 [main] INFO  org.codechallenge.resources.Initializer - Quit Chrome Driver
+09:43:51.991 [main] INFO  org.codechallenge.resources.Initializer - Driver Initialized and Navigated HomePage

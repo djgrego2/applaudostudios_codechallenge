@@ -1,11 +1,27 @@
 package org.codechallenge.utils;
+import com.github.romankh3.image.comparison.ImageComparison;
+import com.github.romankh3.image.comparison.ImageComparisonUtil;
+import com.github.romankh3.image.comparison.model.ImageComparisonResult;
+import com.github.romankh3.image.comparison.model.ImageComparisonState;
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
-import java.util.Locale;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.File;
+
+import java.io.File;
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class Helper {
@@ -30,6 +46,8 @@ public class Helper {
     By StoreTelNumber = By.xpath("//*[@id=\"block_contact_infos\"]/div/ul/li[2]/span");
     By StoreEmail = By.xpath("//*[@id=\"block_contact_infos\"]/div/ul/li[3]/span/a");
     By StoreAddress = By.xpath("//*[@id=\"block_contact_infos\"]/div/ul/li[1]");
+
+    String userDirectory = System.getProperty("user.dir");
 
     public int GetTotalNumber(String TotalCount){
 
@@ -77,7 +95,7 @@ public class Helper {
 
         String searchPaginationName = driver.findElement(SearchNamePage).getText();
 
-        Assert.assertEquals(searchPaginationName,"Search");
+        assertEquals(searchPaginationName,"Search");
         System.out.println("SEARCH PAGE VALIDATED");
 
         try {
@@ -100,7 +118,7 @@ public class Helper {
 
         String searchPaginationName = driver.findElement(SearchNamePage).getText();
 
-        Assert.assertEquals(searchPaginationName,"Search");
+        assertEquals(searchPaginationName,"Search");
         System.out.println("SEARCH PAGE VALIDATED");
 
         try {
@@ -118,9 +136,75 @@ public class Helper {
     public void ScrollToElement(WebDriver driver){
             JavascriptExecutor je = (JavascriptExecutor)driver;
             je.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(StoreTitle));
-            Assert.assertEquals("Store information", driver.findElement(StoreTitle).getText());
+            assertEquals("Store information", driver.findElement(StoreTitle).getText());
             Assert.assertTrue(driver.findElement(StoreAddress).isDisplayed());
-            Assert.assertEquals("support@seleniumframework.com", driver.findElement(StoreEmail).getText());
-            Assert.assertEquals("(347) 466-7432", driver.findElement(StoreTelNumber).getText());
+            assertEquals("support@seleniumframework.com", driver.findElement(StoreEmail).getText());
+            assertEquals("(347) 466-7432", driver.findElement(StoreTelNumber).getText());
+    }
+
+    public void PageScreenshot(WebDriver driver, String screenshotName) throws IOException {
+
+        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+        ImageIO.write(screenshot.getImage(), "png", new File(userDirectory + "\\screenshots\\" + screenshotName));
+
+    }
+
+    public void CompareImages (String imageName1, String imageName2){
+        BufferedImage img1 = null;
+        try {
+            img1 = ImageIO.read(new File(userDirectory + "\\screenshots\\" + imageName1));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BufferedImage img2 = null;
+        try {
+            img2 = ImageIO.read(new File(userDirectory + "\\screenshots\\" + imageName2));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+            int w1 = img1.getWidth();
+            int w2 = img2.getWidth();
+            int h1 = img1.getHeight();
+            int h2 = img2.getHeight();
+            if ((w1!=w2)||(h1!=h2)) {
+                System.out.println("Same Dimwnsions");
+            } else {
+                long diff = 0;
+                for (int j = 0; j < h1; j++) {
+                    for (int i = 0; i < w1; i++) {
+                        //Getting the RGB values of a pixel
+                        int pixel1 = img1.getRGB(i, j);
+                        Color color1 = new Color(pixel1, true);
+                        int r1 = color1.getRed();
+                        int g1 = color1.getGreen();
+                        int b1 = color1.getBlue();
+                        int pixel2 = img2.getRGB(i, j);
+
+                        Color color2 = new Color(pixel2, true);
+                        int r2 = color2.getRed();
+                        int g2 = color2.getGreen();
+                        int b2= color2.getBlue();
+
+                        long data = Math.abs(r1-r2)+Math.abs(g1-g2)+ Math.abs(b1-b2);
+                        diff = diff+data;
+                    }
+                }
+                double avg = diff/(w1*h1*3);
+                double percentage = (avg/255)*100;
+                System.out.println("Difference: " + percentage);
+        }
+    }
+
+    public void ImageComparison(String expectedImage_name, String actualImage_name){
+
+        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources(expectedImage_name);
+        BufferedImage actualImage = ImageComparisonUtil.readImageFromResources(actualImage_name);
+
+        File resultDestination = new File( userDirectory + "\\screenshots\\result.png" );
+        ImageComparisonResult imageComparisonResult = new ImageComparison(expectedImage, actualImage, resultDestination).compareImages();
+
+        assertEquals(ImageComparisonState.MATCH, imageComparisonResult.getImageComparisonState());
+        System.out.println("SON IGUALES");
+
     }
 }

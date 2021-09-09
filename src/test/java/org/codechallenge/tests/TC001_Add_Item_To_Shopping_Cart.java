@@ -1,5 +1,6 @@
 package org.codechallenge.tests;
 
+import com.github.romankh3.image.comparison.ImageComparisonUtil;
 import org.codechallenge.pages.CartPage;
 import org.codechallenge.pages.DressesPage;
 import org.codechallenge.pages.HomePage;
@@ -15,6 +16,7 @@ import org.testng.annotations.Test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class TC001_Add_Item_To_Shopping_Cart extends Initializer {
@@ -62,6 +64,8 @@ public class TC001_Add_Item_To_Shopping_Cart extends Initializer {
         DressesPage dressesPage = homePage.GoToDressesSection();
         dressesPage.ValidateDressesPage(driver);
         dressesPage.ProductTotal();
+
+        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources("expected.png");
 
         helper.AddItemToCart(3, driver); // SPECIFY THE NUMBER OF ITEMS TO ADD. DO NOT EXCEED THE TOTAL NUMBER
         log.info("ADD DRESSES ITEM TO CART");
